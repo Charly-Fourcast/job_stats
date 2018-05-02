@@ -1,0 +1,118 @@
+[
+  {
+      "mode": "REQUIRED",
+      "name": "id",
+      "type": "STRING"
+  },
+  {
+      "mode": "REQUIRED",
+      "name": "kind",
+      "type": "STRING"
+  },
+  {
+      "mode": "REQUIRED",
+      "name": "user_email",
+      "type": "STRING"
+  },
+  {
+      "mode": "REQUIRED",
+      "name": "state",
+      "type": "STRING"
+  },
+  {
+      "mode": "REQUIRED",
+      "name": "jobReference",
+      "type": "RECORD",
+      "fields":[
+        {
+          "mode": "REQUIRED",
+          "name": "projectId",
+          "type": "STRING"
+        },
+        {
+          "mode": "REQUIRED",
+          "name": "jobId",
+          "type": "STRING"
+        }
+      ]
+  },
+  {
+    "name": "configuration",
+    "type":"RECORD",
+    "fields": [
+      {
+        "name": "query",
+        "type":"RECORD",
+        "fields": [
+          {
+            "name": "query",
+            "type":"STRING"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name":"statistics",
+    "type":"RECORD",
+    "fields": [
+      {
+        "name":"creationTime",
+        "type":"INTEGER"
+      },
+      {
+        "name":"startTime",
+        "type":"INTEGER"
+      },
+      {
+        "name":"endTime",
+        "type":"INTEGER"
+      },
+      {
+        "name":"totalBytesProcessed",
+        "type":"INTEGER"
+      },
+      {
+        "name":"query",
+        "type":"RECORD",
+        "fields": [
+          {
+            "name":"totalBytesProcessed",
+            "type":"INTEGER"
+          },
+          {
+            "name":"totalBytesBilled",
+            "type":"INTEGER"
+          },
+          {
+            "name":"billingTier",
+            "type":"INTEGER"
+          },
+          {
+            "name":"cacheHit",
+            "type":"BOOLEAN"
+          },
+          {
+            "name":"referencedTables",
+            "type":"RECORD",
+            "mode": "REPEATED",
+            "fields": [
+              {
+                "name":"projectId",
+                "type":"STRING"
+              },
+              {
+                "name":"datasetId",
+                "type":"STRING"
+              },
+              {
+                "name":"tableId",
+                "type":"STRING"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,11 @@
+{
+  "name": "job_stats",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gistfile1.js",
+  "scripts": {
+    "test": "node gistfile1.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
